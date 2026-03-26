@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer,type ReactNode } from 'react'; 
-import { authReducer, initialState, type AuthState,type AuthAction } from './authReducer'; 
+import { authReducer, initialState, type AuthState, type AuthAction } from './AuthReducer'; 
 
 interface AuthContextType { 
     state: AuthState; 
