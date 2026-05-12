@@ -14,7 +14,7 @@ cd taskflow
 npm install
 
 # Start JSON Server (in one terminal)
-npx json-server --watch [db.json](http://_vscodecontentref_/0) --port 4000
+npx json-server --watch db.json --port 4000
 
 # Start React app (in another terminal)
 cd taskflow
