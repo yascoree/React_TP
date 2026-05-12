@@ -20,6 +20,7 @@ export default function Dashboard() {
   const [showForm, setShowForm] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [showDangerousTest, setShowDangerousTest] = useState(false); // TEST XSS
 
   // GET: Charger les données au montage [cite: 113]
   useEffect(() => {
@@ -109,6 +110,11 @@ export default function Dashboard() {
 
   if (loading) return <div className={styles.loading}>Chargement...</div>;
 
+  // ========== TEST XSS - PARTIE 1.1 & 1.2 ==========
+  //  C'est du code de TEST, à SUPPRIMER après
+  //const dangerousName = '<img src=x onerror=alert("HACK")>';
+  // ================================================
+
   return (
     <div className={styles.layout}>
       <HeaderMUI
@@ -143,6 +149,7 @@ export default function Dashboard() {
               />
             )}
           </div>
+         
           <MainContent columns={columns} />
         </div>
       </div>

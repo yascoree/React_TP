@@ -5,6 +5,7 @@
 ### Q1 : Combien de lignes de CSS avez-vous écrit pour le Header MUI ? Comparez avec votre Header.module.css.
 
 **Réponse :**
+
 - **MUI (HeaderMUI.tsx)** : **0 lignes de CSS** écrites. Tout le style est intégré dans les props `sx={{}}` des composants MUI.
 - **Header.module.css** : Environ **30-40 lignes** de CSS (flexbox, couleurs, spacing, responsive).
 
@@ -16,12 +17,12 @@
 
 **Réponse :**
 
-| Aspect | MUI | Bootstrap |
-|--------|-----|-----------|
-| **Lisibilité** | 🟢 Plus lisible (composants explicites, API claire) | 🟡 Acceptable (classes CSS, moins évident) |
-| **Longueur** | ~35 lignes | ~28 lignes |
-| **Courbe apprentissage** | 🔴 Moyenne (API MUI à apprendre) | 🟢 Facile (classes Bootstrap sont universelles) |
-| **Personnalisation** | 🟢 Facile (via `sx={{}}`) | 🟡 Possible (via className override) |
+| Aspect                   | MUI                                                 | Bootstrap                                       |
+| ------------------------ | --------------------------------------------------- | ----------------------------------------------- |
+| **Lisibilité**           | 🟢 Plus lisible (composants explicites, API claire) | 🟡 Acceptable (classes CSS, moins évident)      |
+| **Longueur**             | ~35 lignes                                          | ~28 lignes                                      |
+| **Courbe apprentissage** | 🔴 Moyenne (API MUI à apprendre)                    | 🟢 Facile (classes Bootstrap sont universelles) |
+| **Personnalisation**     | 🟢 Facile (via `sx={{}}`)                           | 🟡 Possible (via className override)            |
 
 **Verdict : Plus lisible** = MUI (chaque ligne a une intention claire). **Plus court** = Bootstrap (moins de wrapping avec Box/Typography).
 
@@ -34,6 +35,7 @@
 **Préférence : MUI avec `sx={{}}`**
 
 **Raisons :**
+
 1. **Typage TypeScript** : IntelliSense suggère les bonnes propriétés CSS (pas besoin de se souvenir des noms de classes).
 2. **Colocalisé** : Le style et le HTML sont au même endroit, plus facile à maintenir.
 3. **Variables dynamiques** : Facile d'utiliser des variables JS : `sx={{ color: isDark ? 'white' : 'black' }}`.
@@ -41,6 +43,7 @@
 5. **Responsive intégré** : `sx={{ color: { xs: 'small', md: 'large' } }}` est plus clair que Bootstrap.
 
 **Disadvantages de Bootstrap** :
+
 - Classes CSS globales peuvent créer des conflits.
 - Pas d'autocomplétion TypeScript pour les classes.
 - Moins flexible pour les styles dynamiques.
@@ -51,17 +54,17 @@
 
 ### Q4 : Remplissez le tableau après avoir testé les deux librairies
 
-| Critère | Material UI | React-Bootstrap |
-|---------|-------------|-----------------|
-| **Installation** | `npm install @mui/material @emotion/react @emotion/styled @mui/icons-material` | `npm install react-bootstrap bootstrap` |
+| Critère                           | Material UI                                                                               | React-Bootstrap                                   |
+| --------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Installation**                  | `npm install @mui/material @emotion/react @emotion/styled @mui/icons-material`            | `npm install react-bootstrap bootstrap`           |
 | **Nombre de composants utilisés** | AppBar, Toolbar, Typography, IconButton, Button, Box, Card, CardContent, TextField, Alert | Navbar, Container, Button, Nav, Card, Form, Alert |
-| **Lignes de CSS écrites** | 0 | 0 (utilise bootstrap.min.css) |
-| **Système de style** | `sx={{}}` (CSS-in-JS) | `className` (utility classes) |
-| **Personnalisation couleurs** | 🟢 Excellente (`sx={{ bgcolor: '#1B8C3E' }}`) | 🟡 Bonne (variants + className override) |
-| **Responsive** | 🟢 Excellente (`sx={{ breakpoints }}`) | 🟢 Excellente (classes Bootstrap) |
-| **Lisibilité du code** | 🟢 Très bonne | 🟡 Bonne |
-| **Documentation** | 🟢 Excellente | 🟢 Excellente |
-| **Votre préférence** | 🟢 **MUI** (typage, flexibilité, colocalisé) | - |
+| **Lignes de CSS écrites**         | 0                                                                                         | 0 (utilise bootstrap.min.css)                     |
+| **Système de style**              | `sx={{}}` (CSS-in-JS)                                                                     | `className` (utility classes)                     |
+| **Personnalisation couleurs**     | 🟢 Excellente (`sx={{ bgcolor: '#1B8C3E' }}`)                                             | 🟡 Bonne (variants + className override)          |
+| **Responsive**                    | 🟢 Excellente (`sx={{ breakpoints }}`)                                                    | 🟢 Excellente (classes Bootstrap)                 |
+| **Lisibilité du code**            | 🟢 Très bonne                                                                             | 🟡 Bonne                                          |
+| **Documentation**                 | 🟢 Excellente                                                                             | 🟢 Excellente                                     |
+| **Votre préférence**              | 🟢 **MUI** (typage, flexibilité, colocalisé)                                              | -                                                 |
 
 ---
 
@@ -70,6 +73,7 @@
 **Réponse : Material UI (MUI)**
 
 **Raisons :**
+
 1. **Meilleure intégration TypeScript** : Types complets pour tous les composants.
 2. **Flexibilité** : Personnalisation facile sans créer des fichiers CSS.
 3. **Composants avancés** : MUI a plus de composants prêts à l'emploi (DataGrid, Autocomplete, etc.).
@@ -176,20 +180,22 @@
 
 **Raisons :**
 
-| Aspect | json-server | Firebase | Custom Express |
-|--------|-------------|----------|-----------------|
-| **Temps réel** | ❌ Non (polling seulement) | ✅ **WebSocket intégré** | ✅ Possible (Socket.io) |
-| **Scalabilité** | ❌ 1 serveur max | ✅ Serverless (auto-scaling) | ❌ Gérer manuellement |
-| **Sécurité** | ❌ Aucune | ✅ **Règles intégrées** | ✅ À implémenter |
-| **Coût** | - (local) | 💰 Pay-as-you-go (~$5/mois) | 💰 Serveur (~$20/mois min) |
-| **Setup** | ✅ 5 min | ✅ 10 min | ❌ 2-3 jours |
-| **Maintenance** | ❌ À toi de gérer | ✅ Firebase s'en charge | ❌ À gérer |
+| Aspect          | json-server                | Firebase                     | Custom Express             |
+| --------------- | -------------------------- | ---------------------------- | -------------------------- |
+| **Temps réel**  | ❌ Non (polling seulement) | ✅ **WebSocket intégré**     | ✅ Possible (Socket.io)    |
+| **Scalabilité** | ❌ 1 serveur max           | ✅ Serverless (auto-scaling) | ❌ Gérer manuellement      |
+| **Sécurité**    | ❌ Aucune                  | ✅ **Règles intégrées**      | ✅ À implémenter           |
+| **Coût**        | - (local)                  | 💰 Pay-as-you-go (~$5/mois)  | 💰 Serveur (~$20/mois min) |
+| **Setup**       | ✅ 5 min                   | ✅ 10 min                    | ❌ 2-3 jours               |
+| **Maintenance** | ❌ À toi de gérer          | ✅ Firebase s'en charge      | ❌ À gérer                 |
 
 **Pourquoi pas custom** ?
+
 - Trop de travail pour un chat simple (WebSocket, reconnexion, persistence, etc.).
 - Firebase fait déjà tout ça en 0 ligne de backend.
 
 **Pourquoi pas json-server** ?
+
 - Pas de WebSocket = chat ne marche pas en temps réel (latence horrible).
 
 ---
@@ -203,6 +209,7 @@
 ✅ **Toutes les questions répondues**
 
 **Next steps** :
+
 1. Importer `HeaderMUI` dans Dashboard.tsx et tester.
 2. Créer une page de test pour comparer les deux versions.
 3. Choisir votre préférence pour la suite du projet.

@@ -44,6 +44,11 @@
       "id": "1806",
       "name": "test",
       "color": "#3498db"
+    },
+    {
+      "id": "02df",
+      "name": "Test",
+      "color": "#33db55"
     }
   ],
   "columns": [
