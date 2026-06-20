@@ -1,6 +1,6 @@
 # TaskFlow
 
-A simple Kanban-style task management app built with React + TypeScript + Vite.
+TaskFlow is a Kanban-style task management application built with React, TypeScript, and Vite. It features user authentication, dynamic project creation, and interactive task boards, utilizing a mock REST API (json-server) for data persistence and Redux Toolkit/Context API for state management.
 
 ## Screenshot
 
